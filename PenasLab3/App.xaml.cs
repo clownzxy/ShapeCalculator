@@ -7,7 +7,7 @@ namespace PenasLab3
     {
         public App()
         {
-            InitializeComponent();
+            InitializeComponent();  
 
             MainPage = new NavigationPage(new LandingPage());
         }

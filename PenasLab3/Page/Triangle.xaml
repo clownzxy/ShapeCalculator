@@ -16,26 +16,25 @@
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Area" />
 
-                    <HorizontalStackLayout Spacing="10">
-                        <Label Text="Edge 1" />
+                    <HorizontalStackLayout Spacing="10" Padding="10,0,0,0">
+                        <Label Text="Base" />
                         <Entry WidthRequest="200" />
 
-                        <Picker />
+                        <Picker WidthRequest="200"/>
                         <Label Text="Result:" />
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout Spacing="10">
-                        <Label Text="Edge 2" />
+                        <Label Text="Height" />
                         <Entry WidthRequest="200" />
-                        <HorizontalStackLayout Margin="70,0,0,0">
+                        <HorizontalStackLayout Margin="210,0,0,0">
                             <Entry WidthRequest="200" />
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout Spacing="10">
-                        <Label Text="Edge 3" />
-                        <Entry WidthRequest="200" />
-                        <HorizontalStackLayout Margin="70,0,0,0">
+                        
+                        <HorizontalStackLayout Margin="470,0,0,0">
                             <Button Text="Calculate" />
                             <Button Text="Clear" />
                         </HorizontalStackLayout>
