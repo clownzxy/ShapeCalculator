@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<ContentPage
+    x:Class="PenasLab3.Page.LandingPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Command="{Binding ExitCommand}" Text="Exit" />
+        </MenuBarItem>
+        <MenuBarItem Text="Shapes">
+
+
+            <MenuFlyoutItem
+                Clicked="TringleClicked"
+                Command="{Binding TriangleBinding}"
+                Text="Triangle" />
+            <MenuFlyoutItem Command="{Binding SquareBinding}" Text="Square" />
+            <MenuFlyoutItem Command="{Binding RectangleBinding}" Text="Rectangle" />
+            <MenuFlyoutItem Command="{Binding CircleBinding}" Text="Circle" />
+        </MenuBarItem>
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Command="{Binding RefreshCommand}" Text="Refresh" />
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+
+</ContentPage>
