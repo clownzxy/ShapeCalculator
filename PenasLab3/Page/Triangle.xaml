@@ -16,26 +16,29 @@
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Area" />
 
-                    <HorizontalStackLayout Spacing="10" Padding="10,0,0,0">
+                    <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
                         <Label Text="Base" />
-                        <Entry WidthRequest="200" />
+                        <Entry x:Name="txtBase" WidthRequest="200" />
 
-                        <Picker WidthRequest="200"/>
+                        <Picker ItemsSource="{Binding UnitPicker}" WidthRequest="200" />
                         <Label Text="Result:" />
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout Spacing="10">
                         <Label Text="Height" />
-                        <Entry WidthRequest="200" />
+                        <Entry x:Name="txtHeight" WidthRequest="200" />
                         <HorizontalStackLayout Margin="210,0,0,0">
-                            <Entry WidthRequest="200" />
+                            <Entry x:Name="txtResult" WidthRequest="200" />
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout Spacing="10">
-                        
+
                         <HorizontalStackLayout Margin="470,0,0,0">
-                            <Button Text="Calculate" />
+                            <Button
+                                x:Name="btnCalculate"
+                                Clicked="OnCalculateButtonClick"
+                                Text="Calculate" />
                             <Button Text="Clear" />
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
