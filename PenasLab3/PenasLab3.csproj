@@ -61,6 +61,9 @@
 	  <MauiXaml Update="Page\LandingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Page\SquarePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Page\Triangle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

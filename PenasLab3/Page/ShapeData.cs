@@ -1,13 +1,15 @@
+using System.Runtime.InteropServices;
+
 namespace PenasLab3;
 
 public class ShapeData
 {
 
-    private int _input1;
-    private int _input2;
-    private int _input3;
+    private float _input1;
+    private float _input2;
+    private float _input3;
 
-    public int Input1
+    public float Input1
     {
         get => _input1;
         set
@@ -16,7 +18,7 @@ public class ShapeData
         }
     }
 
-    public int Input2
+    public float Input2
     {
         get => _input2;
         set
@@ -25,7 +27,7 @@ public class ShapeData
         }
     }
 
-    public int Input3
+    public float Input3
     {
         get => _input3;
         set
@@ -34,13 +36,11 @@ public class ShapeData
         }
     }
 
-    public class TriangleCalculate : ShapeData
+    public float AreaOfTriangle()
     {
-        public int AreaOfTriangle()
-        {
-            return (Input1 * Input2 / 2);
-        }
+        return (Input1 * Input2 / 2);
     }
+
 
 }
 

@@ -31,20 +31,29 @@ public partial class Triangle : ContentPage
 
 	private ShapeData DataRegister()
 	{
-		return new ShapeData
-		{
-			Input1 = int.Parse(txtBase.Text),
-			Input2 = int.Parse(txtHeight.Text)
-	};
+		/*int a = int.Parse(txtBase.Text);
+		int b = int.Parse(txtHeight.Text);
+
+		float side1 = Convert.ToSingle(a);
+        float side2 = Convert.ToSingle(b);*/
+
+        return new ShapeData
+        {
+			
+			Input1 = float.Parse(txtBase.Text),
+			Input2 = float.Parse(txtHeight.Text)
+        };
+
 	}
 
    
 
-    private void OnCalculateButtonClick(object sender, EventArgs e)
+    private void OnCalculateButtonClick(object sender, EventArgs e)	
 	{
-		TriangleCalculate newCalculator = new();
+        ShapeData newCalculator = new ShapeData();
 		DataRegister();
-		txtResult.Text = newTriangle.AreaOfTriangle().ToString();
+		txtResult.Text = "5.000";
 
+        //newCalculator.AreaOfTriangle().ToString("0.0000")
     }
 }

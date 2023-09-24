@@ -28,7 +28,10 @@
                         <Label Text="Height" />
                         <Entry x:Name="txtHeight" WidthRequest="200" />
                         <HorizontalStackLayout Margin="210,0,0,0">
-                            <Entry x:Name="txtResult" WidthRequest="200" />
+                            <Border>
+                                <Label x:Name="txtResult" Text="{Binding Triangle}"/>
+                            </Border>
+
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
 

@@ -14,4 +14,9 @@ public partial class LandingPage : ContentPage
         Navigation.PushAsync(new Triangle());
 
     }
+
+    private void SquareClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new SquarePage());
+    }
 }
