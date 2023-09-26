@@ -24,11 +24,12 @@ public partial class Triangle : ContentPage
 
 		UnitPicker = new ObservableCollection<String>
 		{
-			"--SELECT--",
-			"cm"
+			"in",
+			"m",
+			"cm",
+			"km"
 		};
 
-        
         BindingContext = this;
 	}
 
@@ -50,10 +51,26 @@ public partial class Triangle : ContentPage
 
     private void OnCalculateButtonClick(object sender, EventArgs e)	
 	{
-		var test = DataRegister().Result;
-		txtResult.Text = test.ToString();
+		var test = DataRegister().AreaOfTriangle();
+		txtResult.Text = ($"{test.ToString()} {pickerUnits.SelectedItem}");
 		//txtResult.Text = newCalculator.AreaOfTriangle().ToString();
 
         //newCalculator.AreaOfTriangle().ToString("0.0000")
     }
+
+    void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+    }
+
+	void OnClearButtonClick(object sender, EventArgs e)
+	{
+		txtBase.Text= string.Empty;
+		txtHeight.Text= string.Empty;
+		txtResult.Text = string.Empty;
+        pickerUnits.SelectedItem="";
+	}
+
+
 }

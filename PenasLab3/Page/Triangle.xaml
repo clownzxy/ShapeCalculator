@@ -18,9 +18,17 @@
 
                     <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
                         <Label Text="Base" />
-                        <Entry x:Name="txtBase" WidthRequest="200" />
+                        <Entry
+                            x:Name="txtBase"
+                            Keyboard="Numeric"
+                            WidthRequest="200" />
 
-                        <Picker ItemsSource="{Binding UnitPicker}" WidthRequest="200" />
+                        <Picker
+                            x:Name="pickerUnits"
+                            ItemsSource="{Binding UnitPicker}"
+                            SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                            SelectedItem="--SELECT--"
+                            WidthRequest="200" />
                         <Label Text="Result:" />
                     </HorizontalStackLayout>
 
@@ -42,7 +50,10 @@
                                 x:Name="btnCalculate"
                                 Clicked="OnCalculateButtonClick"
                                 Text="Calculate" />
-                            <Button Text="Clear" />
+                            <Button
+                                x:Name="btnClear"
+                                Clicked="OnClearButtonClick"
+                                Text="Clear" />
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
 
