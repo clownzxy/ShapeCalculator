@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PenasLab3.Page;
 
@@ -19,40 +20,39 @@ public partial class Triangle : ContentPage
 	{
 		InitializeComponent();
 
+		
+
 		UnitPicker = new ObservableCollection<String>
 		{
 			"--SELECT--",
 			"cm"
 		};
 
-
-		BindingContext = this;
+        
+        BindingContext = this;
 	}
 
-	private ShapeData DataRegister()
+	public ShapeData DataRegister()
 	{
 		/*int a = int.Parse(txtBase.Text);
 		int b = int.Parse(txtHeight.Text);
 
 		float side1 = Convert.ToSingle(a);
         float side2 = Convert.ToSingle(b);*/
+		ShapeData theShape = new ShapeData();
+		theShape.Input1 = decimal.Parse(txtBase.Text);
+		theShape.Input2 = decimal.Parse(txtHeight.Text);
 
-        return new ShapeData
-        {
-			
-			Input1 = float.Parse(txtBase.Text),
-			Input2 = float.Parse(txtHeight.Text)
-        };
-
+		return theShape;
 	}
 
    
 
     private void OnCalculateButtonClick(object sender, EventArgs e)	
 	{
-        ShapeData newCalculator = new ShapeData();
-		DataRegister();
-		txtResult.Text = "5.000";
+		var test = DataRegister().Result;
+		txtResult.Text = test.ToString();
+		//txtResult.Text = newCalculator.AreaOfTriangle().ToString();
 
         //newCalculator.AreaOfTriangle().ToString("0.0000")
     }

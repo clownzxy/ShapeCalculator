@@ -5,11 +5,11 @@ namespace PenasLab3;
 public class ShapeData
 {
 
-    private float _input1;
-    private float _input2;
-    private float _input3;
+    private decimal _input1;
+    private decimal _input2;
+    private decimal _input3;
 
-    public float Input1
+    public decimal Input1
     {
         get => _input1;
         set
@@ -18,7 +18,7 @@ public class ShapeData
         }
     }
 
-    public float Input2
+    public decimal Input2
     {
         get => _input2;
         set
@@ -27,7 +27,7 @@ public class ShapeData
         }
     }
 
-    public float Input3
+    public decimal Input3
     {
         get => _input3;
         set
@@ -36,9 +36,16 @@ public class ShapeData
         }
     }
 
-    public float AreaOfTriangle()
+    public decimal Result
     {
-        return (Input1 * Input2 / 2);
+        get {
+            return AreaOfTriangle();
+        }
+    }
+
+    public decimal AreaOfTriangle()
+    {
+        return (Input1 * Input2/2);
     }
 
 
