@@ -1,5 +1,6 @@
+using CommunityToolkit.Maui.Behaviors;
 using System.Collections.ObjectModel;
-using System.Security.Cryptography.X509Certificates;
+
 
 namespace PenasLab3.Page;
 
@@ -51,11 +52,17 @@ public partial class Triangle : ContentPage
 
     private void OnCalculateButtonClick(object sender, EventArgs e)	
 	{
-		var test = DataRegister().AreaOfTriangle();
-		txtResult.Text = ($"{test.ToString()} {pickerUnits.SelectedItem}");
-		//txtResult.Text = newCalculator.AreaOfTriangle().ToString();
-
-        //newCalculator.AreaOfTriangle().ToString("0.0000")
+		if (IsValidated() == true)
+		{
+            var test = DataRegister().AreaOfTriangle();
+            txtResult.Text = ($"{test.ToString()} {pickerUnits.SelectedItem}");
+		}
+		else
+		{
+			txtResult.Text = ($"Invalid Input");
+			txtResult.TextColor = Colors.Red;
+		}
+		
     }
 
     void OnPickerSelectedIndexChanged(object sender, EventArgs e)
@@ -72,5 +79,49 @@ public partial class Triangle : ContentPage
         pickerUnits.SelectedItem="";
 	}
 
+	public bool IsValidated()
+	{
+		return true;
+	}
+	
+}
 
+
+class NumericValidationBehaviorPage : ContentPage
+{
+    public NumericValidationBehaviorPage()
+    {
+        var entry = new Entry
+        {
+            Keyboard = Keyboard.Numeric
+        };
+
+        var validStyle = new Style(typeof(Entry));
+        validStyle.Setters.Add(new Setter
+        {
+            Property = Entry.TextColorProperty,
+            Value = Colors.Green
+        });
+
+        var invalidStyle = new Style(typeof(Entry));
+        invalidStyle.Setters.Add(new Setter
+        {
+            Property = Entry.TextColorProperty,
+            Value = Colors.Red
+        });
+
+        var numericValidationBehavior = new NumericValidationBehavior
+        {
+            InvalidStyle = invalidStyle,
+            ValidStyle = validStyle,
+            Flags = ValidationFlags.ValidateOnValueChanged,
+            MinimumValue = 1.0,
+            MaximumValue = 100.0,
+            MaximumDecimalPlaces = 2
+        };
+
+        entry.Behaviors.Add(numericValidationBehavior);
+
+        Content = entry;
+    }
 }

@@ -3,7 +3,19 @@
     x:Class="PenasLab3.Page.Triangle"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     Title="Triangle">
+
+    <ContentPage.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style x:Key="ValidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Green" />
+        </Style>
+    </ContentPage.Resources>
+
+
     <ScrollView>
         <StackLayout>
             <HorizontalStackLayout Padding="20" Spacing="20">
@@ -21,7 +33,19 @@
                         <Entry
                             x:Name="txtBase"
                             Keyboard="Numeric"
-                            WidthRequest="200" />
+                            WidthRequest="200">
+                            <Entry.Behaviors>
+                                <toolkit:NumericValidationBehavior
+                                    Flags="ValidateOnValueChanged"
+                                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                    MaximumDecimalPlaces="3"
+                                    MinimumValue="1.0"
+                                    ValidStyle="{StaticResource ValidEntryStyle}" />
+                            </Entry.Behaviors>
+                        </Entry>
+
+
+
 
                         <Picker
                             x:Name="pickerUnits"
