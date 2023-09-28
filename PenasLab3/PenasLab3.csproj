@@ -51,6 +51,8 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\area_triangle.png" />
+	  <None Remove="Resources\Images\perimeter_of_triangle.jpg" />
+	  <None Remove="Resources\Images\triangle_cone_volume.png" />
 	</ItemGroup>
 
 	<ItemGroup>

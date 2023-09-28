@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     Title="Triangle">
-
     <ContentPage.Resources>
         <Style x:Key="InvalidEntryStyle" TargetType="Entry">
             <Setter Property="TextColor" Value="Red" />
@@ -14,8 +13,6 @@
             <Setter Property="TextColor" Value="Green" />
         </Style>
     </ContentPage.Resources>
-
-
     <ScrollView>
         <StackLayout>
             <HorizontalStackLayout Padding="20" Spacing="20">
@@ -23,11 +20,8 @@
                     HeightRequest="200"
                     HorizontalOptions="Start"
                     Source="area_triangle.png" />
-
-
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Area" />
-
                     <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
                         <Label Text="Base" />
                         <Entry
@@ -44,10 +38,6 @@
                                     ValidStyle="{StaticResource ValidEntryStyle}" />
                             </Entry.Behaviors>
                         </Entry>
-
-
-
-
                         <Picker
                             x:Name="pickerUnits"
                             ItemsSource="{Binding UnitPicker}"
@@ -56,10 +46,8 @@
                             WidthRequest="200" />
                         <Label Text="Result:" />
                     </HorizontalStackLayout>
-
                     <HorizontalStackLayout Spacing="10">
                         <Label Text="Height" />
-
                         <Entry x:Name="txtHeight" WidthRequest="200">
                             <Entry.Behaviors>
                                 <toolkit:NumericValidationBehavior
@@ -75,12 +63,9 @@
                             <Border>
                                 <Label x:Name="txtResult" />
                             </Border>
-
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
-
                     <HorizontalStackLayout Spacing="10">
-
                         <HorizontalStackLayout Margin="470,0,0,0">
                             <Button
                                 x:Name="btnCalculate"
@@ -92,11 +77,118 @@
                                 Text="Clear" />
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
-
                 </VerticalStackLayout>
+            </HorizontalStackLayout>
 
+
+            <HorizontalStackLayout Padding="20" Spacing="20">
+                <Image
+                    HeightRequest="200"
+                    HorizontalOptions="Start"
+                    Source="perimeter_of_triangle.jpg" />
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Perimeter" />
+                    <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
+                        <Label Text="Side 1" />
+                        <Entry
+                            x:Name="txtSide1"
+                            Keyboard="Numeric"
+                            WidthRequest="200">
+                            <Entry.Behaviors>
+                                <toolkit:NumericValidationBehavior
+                                    x:Name="txtSide1numericValidator"
+                                    Flags="ValidateOnValueChanged"
+                                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                    MaximumDecimalPlaces="3"
+                                    MinimumValue="1.0"
+                                    ValidStyle="{StaticResource ValidEntryStyle}" />
+                            </Entry.Behaviors>
+                        </Entry>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Side2" />
+                        <Entry x:Name="txtSide2" WidthRequest="200">
+                            <Entry.Behaviors>
+                                <toolkit:NumericValidationBehavior
+                                    x:Name="txtSide2tnumericValidator"
+                                    Flags="ValidateOnValueChanged"
+                                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                    MaximumDecimalPlaces="3"
+                                    MinimumValue="1.0"
+                                    ValidStyle="{StaticResource ValidEntryStyle}" />
+                            </Entry.Behaviors>
+                        </Entry>
+                        <HorizontalStackLayout Margin="210,0,0,0">
+                            <Label Text="Result:" />
+                            <Border>
+                                <Label x:Name="txtPerimeterResult" />
+                            </Border>
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Side 3" />
+                        <Entry x:Name="txtSide3" WidthRequest="200">
+                            <Entry.Behaviors>
+                                <toolkit:NumericValidationBehavior
+                                    x:Name="txtSide3tnumericValidator"
+                                    Flags="ValidateOnValueChanged"
+                                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                    MaximumDecimalPlaces="3"
+                                    MinimumValue="1.0"
+                                    ValidStyle="{StaticResource ValidEntryStyle}" />
+                            </Entry.Behaviors>
+                        </Entry>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Padding="20" Spacing="20">
+                <Image
+                    HeightRequest="200"
+                    HorizontalOptions="Start"
+                    Source="triangle_cone_volume.png" />
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Cone" />
+                    <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
+                        <Label Text="Radius" />
+                        <Entry
+                            x:Name="txtTriangleRadius"
+                            Keyboard="Numeric"
+                            WidthRequest="200">
+                            <Entry.Behaviors>
+                                <toolkit:NumericValidationBehavior
+                                    x:Name="txtTriangleRadiusnumericValidator"
+                                    Flags="ValidateOnValueChanged"
+                                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                    MaximumDecimalPlaces="3"
+                                    MinimumValue="1.0"
+                                    ValidStyle="{StaticResource ValidEntryStyle}" />
+                            </Entry.Behaviors>
+                        </Entry>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Height" />
+                        <Entry x:Name="txtTriangleHeight" WidthRequest="200">
+                            <Entry.Behaviors>
+                                <toolkit:NumericValidationBehavior
+                                    x:Name="txtTriangleHeightnumericValidator"
+                                    Flags="ValidateOnValueChanged"
+                                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                    MaximumDecimalPlaces="3"
+                                    MinimumValue="1.0"
+                                    ValidStyle="{StaticResource ValidEntryStyle}" />
+                            </Entry.Behaviors>
+                        </Entry>
+                        <HorizontalStackLayout Margin="210,0,0,0">
+                            <Label Text="Result:" />
+                            <Border>
+                                <Label x:Name="txtTriangleCone" />
+                            </Border>
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
             </HorizontalStackLayout>
         </StackLayout>
     </ScrollView>
-
 </ContentPage>

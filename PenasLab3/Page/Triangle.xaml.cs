@@ -1,69 +1,63 @@
 using CommunityToolkit.Maui.Behaviors;
 using System.Collections.ObjectModel;
 
-
 namespace PenasLab3.Page;
 
 public partial class Triangle : ContentPage
 {
-	private ObservableCollection<String> _unitPicker;
+    private ObservableCollection<String> _unitPicker;
 
-	public ObservableCollection<String> UnitPicker
-	{
-		get => _unitPicker;
-		set
-		{
-			_unitPicker=value;
-		}
-	}
+    public ObservableCollection<String> UnitPicker
+    {
+        get => _unitPicker;
+        set
+        {
+            _unitPicker = value;
+        }
+    }
 
-	public Triangle()
-	{
-		InitializeComponent();
+    public Triangle()
+    {
+        InitializeComponent();
 
-		
-
-		UnitPicker = new ObservableCollection<String>
-		{
-			"in",
-			"m",
-			"cm",
-			"km"
-		};
+        UnitPicker = new ObservableCollection<String> {
+      "in",
+      "m",
+      "cm",
+      "km"
+    };
 
         BindingContext = this;
-	}
+    }
 
-	public ShapeData DataRegister()
-	{
-		/*int a = int.Parse(txtBase.Text);
-		int b = int.Parse(txtHeight.Text);
+    public ShapeData DataRegister()
+    {
+        ShapeData theShape = new ShapeData();
+        theShape.Input1 = decimal.Parse(txtBase.Text);
+        theShape.Input2 = decimal.Parse(txtHeight.Text);
 
-		float side1 = Convert.ToSingle(a);
-        float side2 = Convert.ToSingle(b);*/
-		ShapeData theShape = new ShapeData();
-		theShape.Input1 = decimal.Parse(txtBase.Text);
-		theShape.Input2 = decimal.Parse(txtHeight.Text);
+        return theShape;
+    }
 
-		return theShape;
-	}
+    private void OnCalculateButtonClick(object sender, EventArgs e)
+    {
+        if (IsValidated() == true)
+        {
+            var triangleArea = DataRegister().AreaOfTriangle();
+            var trianglePerimeter = DataRegister().PerimeterOfTriangle();
+            txtResult.Text = ($"{triangleArea.ToString()} {pickerUnits.SelectedItem}");
+            txtResult.TextColor = Colors.Green;
+            txtPerimeterResult.Text = ($"{trianglePerimeter.ToString()} {pickerUnits.SelectedItem}");
+            txtPerimeterResult.TextColor = Colors.Green;
+        }
+        else
+        {
+            txtResult.Text = ($"Invalid Input, only accepts numeric input");
+            txtResult.TextColor = Colors.Red;
+            txtPerimeterResult.Text = ($"Invalid Input, only accepts numeric input");
+            txtPerimeterResult.TextColor = Colors.Red;
+        }
 
-   
-
-    private void OnCalculateButtonClick(object sender, EventArgs e)	
-	{
-		if (IsValidated() == true)
-		{
-            var test = DataRegister().AreaOfTriangle();
-            txtResult.Text = ($"{test.ToString()} {pickerUnits.SelectedItem}");
-			txtResult.TextColor = Colors.Green;
-		}
-		else
-		{
-			txtResult.Text = ($"Invalid Input, only accepts numeric input");
-			txtResult.TextColor = Colors.Red;
-		}
-		
     }
 
     void OnPickerSelectedIndexChanged(object sender, EventArgs e)
@@ -72,33 +66,31 @@ public partial class Triangle : ContentPage
         int selectedIndex = picker.SelectedIndex;
     }
 
-	void OnClearButtonClick(object sender, EventArgs e)
-	{
-		txtBase.Text= string.Empty;
-		txtHeight.Text= string.Empty;
-		txtResult.Text = string.Empty;
-        pickerUnits.SelectedItem="";
-	}
-
-	public bool IsValidated()
-	{
-		if (txtBasenumericValidator.IsValid==true|| txtHeightnumericValidator.IsValid==true)
-		{
-            return true;
-
-		}else if(txtBasenumericValidator.IsValid == true || txtHeightnumericValidator.IsValid == false){
-			return false;
-		}else if(txtBasenumericValidator.IsValid == false || txtHeightnumericValidator.IsValid == true){
-			return false;
-		}
-		else
-        {
-			return false;
-		}
+    void OnClearButtonClick(object sender, EventArgs e)
+    {
+        txtBase.Text = string.Empty;
+        txtHeight.Text = string.Empty;
+        txtResult.Text = string.Empty;
+        pickerUnits.SelectedItem = "";
     }
-	
-}
 
+    public bool IsValidated()
+    {
+        if (txtBasenumericValidator.IsValid == true 
+            && txtHeightnumericValidator.IsValid == true
+            && txtSide1numericValidator.IsValid==true
+            && txtSide2tnumericValidator.IsValid==true
+            && txtSide3tnumericValidator.IsValid==true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+}
 
 class NumericValidationBehaviorPage : ContentPage
 {

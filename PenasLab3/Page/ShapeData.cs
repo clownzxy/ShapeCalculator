@@ -36,16 +36,20 @@ public class ShapeData
         }
     }
 
-    public decimal Result
-    {
-        get {
-            return AreaOfTriangle();
-        }
-    }
 
     public decimal AreaOfTriangle()
     {
         return (Input1 * Input2/2);
+    }
+
+    public decimal PerimeterOfTriangle()
+    {
+        return (Input1 + Input2 + Input3);
+    }
+
+    public decimal ConeOfTriangle()
+    {
+        return (Math.PI * (decimal)Math.Pow( ((double)(Input1) * (double)(Input2) / 3, 2);
     }
 
 
