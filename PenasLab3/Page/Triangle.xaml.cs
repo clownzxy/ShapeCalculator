@@ -45,10 +45,13 @@ public partial class Triangle : ContentPage
         {
             var triangleArea = DataRegister().AreaOfTriangle();
             var trianglePerimeter = DataRegister().PerimeterOfTriangle();
+            var triangleCone = DataRegister().ConeOfTriangle();
             txtResult.Text = ($"{triangleArea.ToString()} {pickerUnits.SelectedItem}");
             txtResult.TextColor = Colors.Green;
             txtPerimeterResult.Text = ($"{trianglePerimeter.ToString()} {pickerUnits.SelectedItem}");
             txtPerimeterResult.TextColor = Colors.Green;
+            txtTriangleConeResult.Text = ($"{triangleCone.ToString()} {pickerUnits.SelectedItem}");
+            txtTriangleConeResult.TextColor = Colors.Green;
         }
         else
         {
@@ -56,6 +59,9 @@ public partial class Triangle : ContentPage
             txtResult.TextColor = Colors.Red;
             txtPerimeterResult.Text = ($"Invalid Input, only accepts numeric input");
             txtPerimeterResult.TextColor = Colors.Red;
+            txtTriangleConeResult.Text = ($"Invalid Input, only accepts numeric input");
+            txtTriangleConeResult.TextColor = Colors.Red;
+
         }
 
     }
@@ -71,6 +77,13 @@ public partial class Triangle : ContentPage
         txtBase.Text = string.Empty;
         txtHeight.Text = string.Empty;
         txtResult.Text = string.Empty;
+        txtPerimeterResult.Text= string.Empty;
+        txtSide1.Text = string.Empty;
+        txtSide2.Text = string.Empty;   
+        txtSide3.Text = string.Empty;
+        txtTriangleConeResult.Text = string.Empty;
+        txtTriangleHeight.Text = string.Empty;
+        txtTriangleRadius.Text = string.Empty;
         pickerUnits.SelectedItem = "";
     }
 
@@ -80,7 +93,9 @@ public partial class Triangle : ContentPage
             && txtHeightnumericValidator.IsValid == true
             && txtSide1numericValidator.IsValid==true
             && txtSide2tnumericValidator.IsValid==true
-            && txtSide3tnumericValidator.IsValid==true)
+            && txtSide3tnumericValidator.IsValid==true
+            && txtTriangleHeightnumericValidator.IsValid==true
+            && txtTriangleRadiusnumericValidator.IsValid==true)
         {
             return true;
         }
