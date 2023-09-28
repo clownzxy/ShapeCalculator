@@ -56,10 +56,11 @@ public partial class Triangle : ContentPage
 		{
             var test = DataRegister().AreaOfTriangle();
             txtResult.Text = ($"{test.ToString()} {pickerUnits.SelectedItem}");
+			txtResult.TextColor = Colors.Green;
 		}
 		else
 		{
-			txtResult.Text = ($"Invalid Input");
+			txtResult.Text = ($"Invalid Input, only accepts numeric input");
 			txtResult.TextColor = Colors.Red;
 		}
 		
@@ -81,8 +82,20 @@ public partial class Triangle : ContentPage
 
 	public bool IsValidated()
 	{
-		return true;
-	}
+		if (txtBasenumericValidator.IsValid==true|| txtHeightnumericValidator.IsValid==true)
+		{
+            return true;
+
+		}else if(txtBasenumericValidator.IsValid == true || txtHeightnumericValidator.IsValid == false){
+			return false;
+		}else if(txtBasenumericValidator.IsValid == false || txtHeightnumericValidator.IsValid == true){
+			return false;
+		}
+		else
+        {
+			return false;
+		}
+    }
 	
 }
 

@@ -36,6 +36,7 @@
                             WidthRequest="200">
                             <Entry.Behaviors>
                                 <toolkit:NumericValidationBehavior
+                                    x:Name="txtBasenumericValidator"
                                     Flags="ValidateOnValueChanged"
                                     InvalidStyle="{StaticResource InvalidEntryStyle}"
                                     MaximumDecimalPlaces="3"
@@ -58,10 +59,21 @@
 
                     <HorizontalStackLayout Spacing="10">
                         <Label Text="Height" />
-                        <Entry x:Name="txtHeight" WidthRequest="200" />
+
+                        <Entry x:Name="txtHeight" WidthRequest="200">
+                            <Entry.Behaviors>
+                                <toolkit:NumericValidationBehavior
+                                    x:Name="txtHeightnumericValidator"
+                                    Flags="ValidateOnValueChanged"
+                                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                    MaximumDecimalPlaces="3"
+                                    MinimumValue="1.0"
+                                    ValidStyle="{StaticResource ValidEntryStyle}" />
+                            </Entry.Behaviors>
+                        </Entry>
                         <HorizontalStackLayout Margin="210,0,0,0">
                             <Border>
-                                <Label x:Name="txtResult" Text="{Binding Result}" />
+                                <Label x:Name="txtResult" />
                             </Border>
 
                         </HorizontalStackLayout>
