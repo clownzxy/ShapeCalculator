@@ -22,7 +22,10 @@
                 Clicked="SquareClicked"
                 Command="{Binding SquareBinding}"
                 Text="Square" />
-            <MenuFlyoutItem Command="{Binding RectangleBinding}" Text="Rectangle" />
+            <MenuFlyoutItem
+                Clicked="RectangleClicked"
+                Command="{Binding RectangleBinding}"
+                Text="Rectangle" />
             <MenuFlyoutItem Command="{Binding CircleBinding}" Text="Circle" />
         </MenuBarItem>
         <MenuBarItem Text="View">

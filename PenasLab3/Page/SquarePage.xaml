@@ -17,11 +17,23 @@
 
     <ScrollView>
         <StackLayout>
-            <HorizontalStackLayout>
-                <Image
-                    HeightRequest="200"
-                    HorizontalOptions="Start"
-                    Source="square_area.png" />
+            <HorizontalStackLayout Padding="20" Spacing="20">
+                <VerticalStackLayout Spacing="20">
+                    <Image
+                        HeightRequest="200"
+                        HorizontalOptions="Start"
+                        Source="square_area.png" />
+                    <Image
+                        HeightRequest="200"
+                        HorizontalOptions="Start"
+                        Source="square_perimeter.jpg" />
+
+                    <Image
+                        HeightRequest="200"
+                        HorizontalOptions="Start"
+                        Source="square_volume.png" />
+                </VerticalStackLayout>
+
                 <VerticalStackLayout Spacing="10">
                     <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
                         <Label Text="Side" />
@@ -48,8 +60,19 @@
                         <Label Text="Result:" />
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Margin="210,0,0,0">
+                        <Label Text="Area " />
                         <Border>
                             <Label x:Name="txtResult" />
+                        </Border>
+                        <Label Text="Perimeter " />
+
+                        <Border>
+                            <Label x:Name="txtResultPerimeter" />
+                        </Border>
+                        <Label Text="Volume " />
+
+                        <Border>
+                            <Label x:Name="txtCubeVolume" />
                         </Border>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="10">
@@ -66,6 +89,9 @@
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </HorizontalStackLayout>
+
+
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

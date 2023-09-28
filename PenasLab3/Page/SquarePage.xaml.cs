@@ -42,46 +42,54 @@ public partial class SquarePage : ContentPage
         return theShape;
     }
 
+    public SquareShape DataRegisterPerimeter()
+    {
+        SquareShape theShape = new SquareShape();
+        theShape.Input1 = decimal.Parse(txtSide.Text);
+
+        return theShape;
+    }
+
+    public SquareShape DataRegisterVolumeCube()
+    {
+        SquareShape theShape = new SquareShape();
+        theShape.Input1 = decimal.Parse(txtSide.Text);
+
+        return theShape;
+    }
+
     private void OnCalculateButtonClick(object sender, EventArgs e)
     {
         if (IsValidated() == true)
         {
             var squareArea = DataRegisterArea().AreaOfSquare();
-            txtSide.Text = ($"{squareArea.ToString()} {pickerUnits.SelectedItem}");
+            var squarePerimeter = DataRegisterPerimeter().PerimeterOfSquare();
+            var squareVolume = DataRegisterVolumeCube().CubeVolumeOfSquare();
+            txtResult.Text = ($"{squareArea.ToString()} {pickerUnits.SelectedItem}");
             txtResult.TextColor = Colors.Green;
+            txtResultPerimeter.Text = ($"{squarePerimeter.ToString()} {pickerUnits.SelectedItem}");
+            txtResultPerimeter.TextColor = Colors.Green;
+            txtCubeVolume.Text = ($"{squareVolume.ToString()} {pickerUnits.SelectedItem}");
+            txtCubeVolume.TextColor = Colors.Green;
 
         }
         else
         {
-            //txtResult.Text = ($"Invalid Input, only accepts numeric input");
-            //txtResult.TextColor = Colors.Red;
+            txtResult.Text = ($"Invalid Input, only accepts numeric input");
+            txtResult.TextColor = Colors.Red;
+            txtResultPerimeter.Text = ($"Invalid Input, only accepts numeric input");
+            txtResultPerimeter.TextColor = Colors.Red;
+            txtCubeVolume.Text = ($"Invalid Input, only accepts numeric input");
+            txtCubeVolume.TextColor = Colors.Red;
 
 
         }
 
     }
-    /*
-    void OnPickerSelectedIndexChanged(object sender, EventArgs e)
-    {
-        var picker = (Picker)sender;
-        int selectedIndex = picker.SelectedIndex;
-    }
-    
-    /*
-    void OnClearButtonClick(object sender, EventArgs e)
-    {
-        //txtBase.Text = string.Empty;
-        //txtHeight.Text = string.Empty;
-        //txtResult.Text = string.Empty;
-
-        pickerUnits.SelectedItem = "";
-    }
 
     public bool IsValidated()
     {
-        if (txtBasenumericValidator.IsValid == true
-            && txtHeightnumericValidator.IsValid == true
-)
+        if (txtSidenumericValidator.IsValid == true)
         {
             return true;
         }
@@ -90,6 +98,25 @@ public partial class SquarePage : ContentPage
             return false;
         }
     }
-    */
+    
+    void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+    }
+    
+    
+    void OnClearButtonClick(object sender, EventArgs e)
+    {
+        txtResult.Text = string.Empty;
+        txtSide.Text = string.Empty;
+        txtResultPerimeter.Text= string.Empty;
+        txtCubeVolume.Text= string.Empty;
+
+        pickerUnits.SelectedItem = "";
+    }
+
+    
+   
 }
     

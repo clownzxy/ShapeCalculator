@@ -18,5 +18,15 @@ public partial class LandingPage : ContentPage
     private void SquareClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new SquarePage());
+    } 
+    
+    
+    private void RectangleClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new RectanglePage());
     }
+
+
+
+    
 }

@@ -70,6 +70,36 @@ public class SquareShape:ShapeData
         return (decimal)Math.Pow((double)Input1, 2);
     }
 
+    public decimal PerimeterOfSquare()
+    {
+        return Input1+Input1+ Input1+ Input1;
+    }
+
+    public decimal CubeVolumeOfSquare()
+    {
+        return (decimal)Math.Pow((double)Input1, 3);
+    }
+
+
+}
+
+public class RectangleShape : ShapeData
+{
+    public decimal AreaOfRectangle()
+    {
+        return Input1*Input2;
+    }
+
+    public decimal PerimeterOfRectangle()
+    {
+        return 2 * (Input1 + Input2);
+    }
+
+    public decimal VolumeOfRectangle()
+    {
+        return Input1 * Input2 * Input3;
+    }
+
 
 }
 
