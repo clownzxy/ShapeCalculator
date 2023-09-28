@@ -30,22 +30,43 @@ public partial class Triangle : ContentPage
         BindingContext = this;
     }
 
-    public ShapeData DataRegister()
+    public TriangleShape DataRegister()
     {
-        ShapeData theShape = new ShapeData();
+        TriangleShape theShape = new TriangleShape();
         theShape.Input1 = decimal.Parse(txtBase.Text);
         theShape.Input2 = decimal.Parse(txtHeight.Text);
 
         return theShape;
     }
 
+    public TriangleShape DataRegisterPerimeter()
+    {
+        TriangleShape theShape = new TriangleShape();
+        theShape.Input1 = decimal.Parse(txtSide1.Text);
+        theShape.Input2 = decimal.Parse(txtSide2.Text);
+        theShape.Input3 = decimal.Parse(txtSide3.Text);
+
+        return theShape;
+    }
+
+    public TriangleShape DataRegisterCone()
+    {
+        TriangleShape theShape = new TriangleShape();
+        theShape.Input1 = decimal.Parse(txtTriangleRadius.Text);
+        theShape.Input2 = decimal.Parse(txtTriangleHeight.Text);
+
+        return theShape;
+    }
+
+
+
     private void OnCalculateButtonClick(object sender, EventArgs e)
     {
         if (IsValidated() == true)
         {
             var triangleArea = DataRegister().AreaOfTriangle();
-            var trianglePerimeter = DataRegister().PerimeterOfTriangle();
-            var triangleCone = DataRegister().ConeOfTriangle();
+            var trianglePerimeter = DataRegisterPerimeter().PerimeterOfTriangle();
+            var triangleCone = DataRegisterCone().ConeOfTriangle();
             txtResult.Text = ($"{triangleArea.ToString()} {pickerUnits.SelectedItem}");
             txtResult.TextColor = Colors.Green;
             txtPerimeterResult.Text = ($"{trianglePerimeter.ToString()} {pickerUnits.SelectedItem}");

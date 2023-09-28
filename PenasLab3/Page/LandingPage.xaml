@@ -18,7 +18,10 @@
                 Clicked="TringleClicked"
                 Command="{Binding TriangleBinding}"
                 Text="Triangle" />
-            <MenuFlyoutItem Command="{Binding SquareBinding}" Text="Square" />
+            <MenuFlyoutItem
+                Clicked="SquareClicked"
+                Command="{Binding SquareBinding}"
+                Text="Square" />
             <MenuFlyoutItem Command="{Binding RectangleBinding}" Text="Rectangle" />
             <MenuFlyoutItem Command="{Binding CircleBinding}" Text="Circle" />
         </MenuBarItem>
