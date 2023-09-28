@@ -103,5 +103,25 @@ public class RectangleShape : ShapeData
 
 }
 
+public class CircleShape : ShapeData
+{
+    public decimal AreaOfCircle()
+    {
+        return (decimal)(Math.PI * Math.Pow((double)Input1,2));
+    }
+
+    public decimal PerimeterOfCircle()
+    {
+        return (decimal)((double)2 * Math.PI * (double)Input1);
+    }
+
+    public decimal VolumeOfCircle()
+    {
+        return (decimal)((4/3) * Math.PI * Math.Pow((double)Input1,3));
+    }
+
+
+}
+
 
 

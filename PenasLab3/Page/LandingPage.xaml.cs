@@ -25,6 +25,11 @@ public partial class LandingPage : ContentPage
     {
         Navigation.PushAsync(new RectanglePage());
     }
+    
+    private void CircleCLicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new CirclePage());
+    }
 
 
 

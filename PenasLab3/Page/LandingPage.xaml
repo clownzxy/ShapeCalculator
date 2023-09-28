@@ -26,7 +26,10 @@
                 Clicked="RectangleClicked"
                 Command="{Binding RectangleBinding}"
                 Text="Rectangle" />
-            <MenuFlyoutItem Command="{Binding CircleBinding}" Text="Circle" />
+            <MenuFlyoutItem
+                Clicked="CircleCLicked"
+                Command="{Binding CircleBinding}"
+                Text="Circle" />
         </MenuBarItem>
         <MenuBarItem Text="View">
             <MenuFlyoutItem Command="{Binding RefreshCommand}" Text="Refresh" />

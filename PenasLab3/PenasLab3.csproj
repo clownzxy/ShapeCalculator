@@ -51,6 +51,9 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\area_triangle.png" />
+	  <None Remove="Resources\Images\circle_area.png" />
+	  <None Remove="Resources\Images\circle_perimeter.png" />
+	  <None Remove="Resources\Images\circle_volume.png" />
 	  <None Remove="Resources\Images\perimeter_of_triangle.jpg" />
 	  <None Remove="Resources\Images\rectangke_area.png" />
 	  <None Remove="Resources\Images\rectangle_perimeter.png" />
@@ -68,6 +71,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Page\CirclePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Page\LandingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
