@@ -71,7 +71,7 @@ public partial class Triangle : ContentPage
             txtResult.TextColor = Colors.Green;
             txtPerimeterResult.Text = ($"{trianglePerimeter.ToString()} {pickerUnits.SelectedItem}");
             txtPerimeterResult.TextColor = Colors.Green;
-            txtTriangleConeResult.Text = ($"{triangleCone.ToString()} {pickerUnits.SelectedItem}");
+            txtTriangleConeResult.Text = ($"{triangleCone.ToString("0.00")} {pickerUnits.SelectedItem}");
             txtTriangleConeResult.TextColor = Colors.Green;
         }
         else
@@ -158,7 +158,9 @@ class NumericValidationBehaviorPage : ContentPage
             Flags = ValidationFlags.ValidateOnValueChanged,
             MinimumValue = 1.0,
             MaximumValue = 100.0,
-            MaximumDecimalPlaces = 2
+            MaximumDecimalPlaces = 2,
+
+
         };
 
         entry.Behaviors.Add(numericValidationBehavior);

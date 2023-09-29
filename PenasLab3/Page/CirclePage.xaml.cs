@@ -46,11 +46,11 @@ public partial class CirclePage : ContentPage
             var circleArea = DataRegisterArea().AreaOfCircle();
             var circlePerimeter = DataRegisterArea().PerimeterOfCircle();
             var circleVolume = DataRegisterArea().VolumeOfCircle();
-            txtResult.Text = ($"{circleArea.ToString()} {pickerUnits.SelectedItem}");
+            txtResult.Text = ($"{circleArea.ToString("0.00")} {pickerUnits.SelectedItem}");
             txtResult.TextColor = Colors.Green;
-            txtResultPerimeter.Text = ($"{circlePerimeter.ToString()} {pickerUnits.SelectedItem}");
+            txtResultPerimeter.Text = ($"{circlePerimeter.ToString("0.00")} {pickerUnits.SelectedItem}");
             txtResultPerimeter.TextColor = Colors.Green;
-            txtCubeVolume.Text = ($"{circleVolume.ToString()} {pickerUnits.SelectedItem}");
+            txtCubeVolume.Text = ($"{circleVolume.ToString("0.00")} {pickerUnits.SelectedItem}");
             txtCubeVolume.TextColor = Colors.Green;
 
         }

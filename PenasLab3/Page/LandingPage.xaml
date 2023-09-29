@@ -9,7 +9,10 @@
 
     <ContentPage.MenuBarItems>
         <MenuBarItem Text="File">
-            <MenuFlyoutItem Command="{Binding ExitCommand}" Text="Exit" />
+            <MenuFlyoutItem
+                Clicked="ExitClicked"
+                Command="{Binding ExitCommand}"
+                Text="Exit" />
         </MenuBarItem>
         <MenuBarItem Text="Shapes">
 
@@ -30,9 +33,6 @@
                 Clicked="CircleCLicked"
                 Command="{Binding CircleBinding}"
                 Text="Circle" />
-        </MenuBarItem>
-        <MenuBarItem Text="View">
-            <MenuFlyoutItem Command="{Binding RefreshCommand}" Text="Refresh" />
         </MenuBarItem>
     </ContentPage.MenuBarItems>
 

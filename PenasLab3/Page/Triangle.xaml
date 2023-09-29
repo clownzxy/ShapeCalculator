@@ -12,6 +12,10 @@
         <Style x:Key="ValidEntryStyle" TargetType="Entry">
             <Setter Property="TextColor" Value="Green" />
         </Style>
+        <Style x:Key="ImageStyle" TargetType="Image">
+            <Setter Property="HeightRequest" Value="200" />
+            <Setter Property="WidthRequest" Value="200" />
+        </Style>
     </ContentPage.Resources>
     <ScrollView>
         <StackLayout>
@@ -19,7 +23,8 @@
                 <Image
                     HeightRequest="200"
                     HorizontalOptions="Start"
-                    Source="area_triangle.png" />
+                    Source="area_triangle.png"
+                    Style="{StaticResource ImageStyle}" />
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Area" />
                     <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
@@ -85,7 +90,8 @@
                 <Image
                     HeightRequest="200"
                     HorizontalOptions="Start"
-                    Source="perimeter_of_triangle.jpg" />
+                    Source="perimeter_of_triangle.jpg"
+                    Style="{StaticResource ImageStyle}" />
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Perimeter" />
                     <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
@@ -147,7 +153,8 @@
                 <Image
                     HeightRequest="200"
                     HorizontalOptions="Start"
-                    Source="triangle_cone_volume.png" />
+                    Source="triangle_cone.jpg"
+                    Style="{StaticResource ImageStyle}" />
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Cone" />
                     <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">

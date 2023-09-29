@@ -13,6 +13,10 @@
         <Style x:Key="ValidEntryStyle" TargetType="Entry">
             <Setter Property="TextColor" Value="Green" />
         </Style>
+        <Style x:Key="ImageStyle" TargetType="Image">
+            <Setter Property="HeightRequest" Value="200" />
+            <Setter Property="WidthRequest" Value="200" />
+        </Style>
     </ContentPage.Resources>
 
     <ScrollView>
@@ -22,16 +26,19 @@
                     <Image
                         HeightRequest="200"
                         HorizontalOptions="Start"
-                        Source="square_area.png" />
+                        Source="square_area.png"
+                        Style="{StaticResource ImageStyle}" />
                     <Image
                         HeightRequest="200"
                         HorizontalOptions="Start"
-                        Source="square_perimeter.jpg" />
+                        Source="square_perimeter.jpg"
+                        Style="{StaticResource ImageStyle}" />
 
                     <Image
                         HeightRequest="200"
                         HorizontalOptions="Start"
-                        Source="square_volume.png" />
+                        Source="square_volume.png"
+                        Style="{StaticResource ImageStyle}" />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="10">
@@ -57,23 +64,27 @@
                             SelectedIndexChanged="OnPickerSelectedIndexChanged"
                             SelectedItem="--SELECT--"
                             WidthRequest="200" />
-                        <Label Text="Result:" />
+
                     </HorizontalStackLayout>
-                    <HorizontalStackLayout Margin="210,0,0,0">
-                        <Label Text="Area " />
-                        <Border>
-                            <Label x:Name="txtResult" />
-                        </Border>
-                        <Label Text="Perimeter " />
+                    <HorizontalStackLayout Margin="0,0,0,0">
+                        <VerticalStackLayout>
+                            <Label Text="Result:" />
+                            <Label Text="Area " />
+                            <Border>
+                                <Label x:Name="txtResult" />
+                            </Border>
+                            <Label Text="Perimeter " />
 
-                        <Border>
-                            <Label x:Name="txtResultPerimeter" />
-                        </Border>
-                        <Label Text="Volume " />
+                            <Border>
+                                <Label x:Name="txtResultPerimeter" />
+                            </Border>
+                            <Label Text="Volume " />
 
-                        <Border>
-                            <Label x:Name="txtCubeVolume" />
-                        </Border>
+                            <Border>
+                                <Label x:Name="txtCubeVolume" />
+                            </Border>
+                        </VerticalStackLayout>
+
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="10">
                         <HorizontalStackLayout Margin="470,0,0,0">

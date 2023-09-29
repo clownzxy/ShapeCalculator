@@ -13,6 +13,10 @@
         <Style x:Key="ValidEntryStyle" TargetType="Entry">
             <Setter Property="TextColor" Value="Green" />
         </Style>
+        <Style x:Key="ImageStyle" TargetType="Image">
+            <Setter Property="HeightRequest" Value="200" />
+            <Setter Property="WidthRequest" Value="200" />
+        </Style>
     </ContentPage.Resources>
 
 
@@ -23,7 +27,8 @@
                 <Image
                     HeightRequest="200"
                     HorizontalOptions="Start"
-                    Source="rectangke_area.png" />
+                    Source="rectangke_area.png"
+                    Style="{StaticResource ImageStyle}" />
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Area" />
                     <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
@@ -48,7 +53,6 @@
                             SelectedIndexChanged="OnPickerSelectedIndexChanged"
                             SelectedItem="--SELECT--"
                             WidthRequest="200" />
-                        <Label Text="Result:" />
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="10">
                         <Label Text="Width" />
@@ -63,11 +67,7 @@
                                     ValidStyle="{StaticResource ValidEntryStyle}" />
                             </Entry.Behaviors>
                         </Entry>
-                        <HorizontalStackLayout Margin="210,0,0,0">
-                            <Border>
-                                <Label x:Name="txtResult" />
-                            </Border>
-                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Margin="210,0,0,0" />
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="10">
                         <HorizontalStackLayout Margin="470,0,0,0">
@@ -89,12 +89,21 @@
                 <Image
                     HeightRequest="200"
                     HorizontalOptions="Start"
-                    Source="rectangle_perimeter.png" />
-                <HorizontalStackLayout Margin="210,0,0,0">
-                    <Label Text="Result:" />
-                    <Border>
-                        <Label x:Name="txtRectanglePerimeterResult" />
-                    </Border>
+                    Source="rectangle_perimeter.png"
+                    Style="{StaticResource ImageStyle}" />
+                <HorizontalStackLayout Margin="0,0,0,0">
+                    <VerticalStackLayout>
+                        <Label Text="Area" />
+                        <Border>
+                            <Label x:Name="txtResult" />
+                        </Border>
+                        <Label Text="Perimeter:" />
+                        <Border>
+                            <Label x:Name="txtRectanglePerimeterResult" />
+                        </Border>
+                    </VerticalStackLayout>
+
+
                 </HorizontalStackLayout>
             </HorizontalStackLayout>
 
@@ -103,7 +112,8 @@
                 <Image
                     HeightRequest="200"
                     HorizontalOptions="Start"
-                    Source="rectangle_volumer.png" />
+                    Source="rectangle_volumer.png"
+                    Style="{StaticResource ImageStyle}" />
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Tank Volume" />
                     <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
@@ -136,29 +146,30 @@
                                     ValidStyle="{StaticResource ValidEntryStyle}" />
                             </Entry.Behaviors>
                         </Entry>
-                        <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
-                            <Label Text="Height" />
-                            <Entry
-                                x:Name="txtRectangleHeight"
-                                Keyboard="Numeric"
-                                WidthRequest="200">
-                                <Entry.Behaviors>
-                                    <toolkit:NumericValidationBehavior
-                                        x:Name="txtRectangleHeightnumericValidator"
-                                        Flags="ValidateOnValueChanged"
-                                        InvalidStyle="{StaticResource InvalidEntryStyle}"
-                                        MaximumDecimalPlaces="3"
-                                        MinimumValue="1.0"
-                                        ValidStyle="{StaticResource ValidEntryStyle}" />
-                                </Entry.Behaviors>
-                            </Entry>
-                        </HorizontalStackLayout>
+
                         <HorizontalStackLayout Margin="210,0,0,0">
                             <Label Text="Result:" />
                             <Border>
                                 <Label x:Name="txtRectangleConeResult" />
                             </Border>
                         </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Padding="10,0,0,0" Spacing="10">
+                        <Label Text="Height" />
+                        <Entry
+                            x:Name="txtRectangleHeight"
+                            Keyboard="Numeric"
+                            WidthRequest="200">
+                            <Entry.Behaviors>
+                                <toolkit:NumericValidationBehavior
+                                    x:Name="txtRectangleHeightnumericValidator"
+                                    Flags="ValidateOnValueChanged"
+                                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                    MaximumDecimalPlaces="3"
+                                    MinimumValue="1.0"
+                                    ValidStyle="{StaticResource ValidEntryStyle}" />
+                            </Entry.Behaviors>
+                        </Entry>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </HorizontalStackLayout>

@@ -62,6 +62,7 @@
 	  <None Remove="Resources\Images\square_area.png" />
 	  <None Remove="Resources\Images\square_perimeter.jpg" />
 	  <None Remove="Resources\Images\square_volume.png" />
+	  <None Remove="Resources\Images\triangle_cone.jpg" />
 	  <None Remove="Resources\Images\triangle_cone_volume.png" />
 	</ItemGroup>
 

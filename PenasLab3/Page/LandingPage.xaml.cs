@@ -30,8 +30,14 @@ public partial class LandingPage : ContentPage
     {
         Navigation.PushAsync(new CirclePage());
     }
-
+    
+    private void ExitClicked(object sender, EventArgs e)
+    {
+        Application.Current.Quit();
+    }
 
 
     
+
+
 }

@@ -58,7 +58,7 @@ public class TriangleShape : ShapeData
 
     public decimal ConeOfTriangle()
     {
-        return (decimal)((Math.PI * Math.Pow((double)Input1, 2) * (double)Input2) / 3);
+        return (decimal)((Math.PI * Math.Pow((double)Input1, 2) * (double)Input2) *1/ 3);
     }
 }
 
